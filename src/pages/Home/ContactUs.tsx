@@ -40,110 +40,124 @@ export default function ContactUs() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden">
-      {/* ---------- Background Layers ---------- */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2b2b2b] to-[#1a1a1a]" />
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-25 mix-blend-overlay" />
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise.png')] opacity-10 animate-[pulse_8s_infinite]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40 pointer-events-none" />
-
+    <section className="relative py-32 overflow-hidden">
       <div className="relative z-10 container mx-auto px-6">
         {/* Heading */}
         <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: -20 }}
+          className="text-center mb-24"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-white to-sky-400 mb-4 drop-shadow-lg">
-            Contact Us
+          <div className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#007AFF] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase">
+             Get In Touch
+          </div>
+          <h2 className="text-4xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none mb-8">
+            Start A <span className="metal-text">Conversation</span>
           </h2>
-          <p className="text-gray-300 max-w-xl mx-auto">
-            Get in touch with us — we’d love to hear from you!
+          <p className="text-xl text-gray-400 font-medium italic max-w-2xl mx-auto leading-relaxed opacity-90">
+             Whether you have a technical query or a global project, our specialists are ready to respond.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* ---------- CONTACT FORM (Formsubmit.co) ---------- */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* ---------- CONTACT FORM ---------- */}
           <motion.form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="backdrop-blur-2xl bg-white/10 border border-white/20 rounded-3xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.6)] transition-all duration-500"
-            initial={{ opacity: 0, x: -50 }}
+            className="glass-card rounded-[60px] p-12 md:p-16 shadow-2xl relative overflow-hidden"
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Hidden config for FormSubmit */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#007AFF] to-transparent opacity-30" />
+            
             <input type="hidden" name="_subject" value="New Inquiry from Padmaja Website" />
             <input type="hidden" name="_captcha" value="false" />
 
-            <div className="space-y-4">
-              {["name", "email", "phone", "address"].map((field) => (
-                <input
-                  key={field}
-                  name={field}
-                  type="text"
-                  value={form[field as keyof typeof form]}
-                  onChange={handleChange}
-                  placeholder={`Your ${field.charAt(0).toUpperCase() + field.slice(1)}`}
-                  required
-                  className="w-full rounded-xl px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400 backdrop-blur-lg"
-                />
-              ))}
+            <div className="space-y-8">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#007AFF] pl-6">Full Name</label>
+                    <input name="name" type="text" value={form.name} onChange={handleChange} placeholder="Enter name" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#007AFF] outline-none transition-all font-medium italic" />
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#007AFF] pl-6">Email Address</label>
+                    <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="email@address.com" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#007AFF] outline-none transition-all font-medium italic" />
+                  </div>
+               </div>
 
-              <motion.button
-                type="submit"
-                disabled={loading}
-                className="w-full rounded-xl px-4 py-3 font-semibold text-white backdrop-blur-2xl bg-white/10 border border-white/20 shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.6)] transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {loading ? "Sending..." : "Submit Now"}
-              </motion.button>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#007AFF] pl-6">Phone</label>
+                    <input name="phone" type="text" value={form.phone} onChange={handleChange} placeholder="+91" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#007AFF] outline-none transition-all font-medium italic" />
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#007AFF] pl-6">Location</label>
+                    <input name="address" type="text" value={form.address} onChange={handleChange} placeholder="City, Country" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#007AFF] outline-none transition-all font-medium italic" />
+                  </div>
+               </div>
+
+               <div className="pt-6">
+                <motion.button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full rounded-full py-6 font-black uppercase tracking-[0.3em] text-white bg-[#007AFF] hover:bg-[#007AFF]/80 shadow-2xl transition-all disabled:opacity-50"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {loading ? "Sending..." : "Send Transmission"}
+                </motion.button>
+               </div>
             </div>
           </motion.form>
 
           {/* Map */}
           <motion.div
-            className="rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.4)] border border-white/20"
-            initial={{ opacity: 0, x: 50 }}
+            className="rounded-[60px] overflow-hidden shadow-2xl glass-card p-3 h-full min-h-[500px] border-white/5"
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
             <iframe
-              title="Google Map Location"
+              title="Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3698.3221119691707!2d70.77947429999999!3d22.037270499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39583799509268af%3A0x4b3871838d78355c!2sPadmaja%20Technocast!5e0!3m2!1sen!2sin!4v1757633076102!5m2!1sen!2sin"
               width="100%"
               height="100%"
-              style={{ minHeight: "450px", border: 0 }}
+              style={{ border: 0, borderRadius: "50px" }}
               loading="lazy"
+              className="invert brightness-75 opacity-60"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </motion.div>
         </div>
 
-        {/* Contact Info Section */}
+        {/* Contact Info Cards */}
         <motion.div
-          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
           {[
-            { icon: Mail, text: "info@padmajatechnocast.com" },
-            { icon: Phone, text: "+91 99981 40607" },
-            { icon: MapPin, text: "Rajkot, Gujarat, India" },
+            { icon: Mail, label: "Email", text: "info@padmajatechnocast.com", sub: "Response within 24hrs" },
+            { icon: Phone, label: "Voice", text: "+91 99981 40607", sub: "Mon-Sat, 9AM-6PM" },
+            { icon: MapPin, label: "Base", text: "Rajkot, Gujarat, India", sub: "Headquarters & Plant" },
           ].map((item, idx) => (
             <div
               key={idx}
-              className="backdrop-blur-2xl bg-white/10 border border-white/20 rounded-3xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.6)] transition-all duration-500"
+              className="glass-card rounded-[40px] p-10 group hover:border-[#007AFF]/30 transition-all duration-500 shadow-xl"
             >
-              <item.icon className="mx-auto w-6 h-6 text-sky-300 mb-2" />
-              <p className="text-white">{item.text}</p>
+              <div className="w-14 h-14 rounded-2xl bg-[#007AFF]/10 flex items-center justify-center mb-6 group-hover:bg-[#007AFF]/20 transition-all">
+                <item.icon className="w-6 h-6 text-[#007AFF]" />
+              </div>
+              <div className="text-[10px] font-black text-[#007AFF] uppercase tracking-widest mb-2 opacity-60 leading-none">{item.label}</div>
+              <p className="text-xl font-black text-white italic uppercase tracking-tight mb-2">{item.text}</p>
+              <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">{item.sub}</p>
             </div>
           ))}
         </motion.div>
@@ -151,3 +165,4 @@ export default function ContactUs() {
     </section>
   );
 }
+

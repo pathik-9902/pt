@@ -348,41 +348,35 @@ const ProcessesData: ProcessesStep[] = [
 
 export default function ProcessesPage(): React.ReactElement {
   return (
-    <section className="relative py-24 px-6 md:px-12 lg:px-16 bg-gradient-to-b from-[#0f1112] via-[#1b1d1f] to-[#0f1112] text-white overflow-hidden">
-      {/* Metallic texture overlay */}
-      <div
-        className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-20 mix-blend-overlay pointer-events-none"
-        aria-hidden="true"
-      />
-
-      {/* Soft glow accents */}
-      <div className="pointer-events-none absolute -left-40 top-32 h-72 w-72 rounded-full bg-sky-500/14 blur-3xl" />
-      <div className="pointer-events-none absolute -right-40 bottom-10 h-72 w-72 rounded-full bg-sky-400/14 blur-3xl" />
-
-      <div className="relative z-10 max-w-6xl lg:max-w-7xl mx-auto">
+    <section className="relative py-32 overflow-hidden">
+      <div className="relative z-10 container mx-auto px-6">
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-32"
         >
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-white to-sky-400">
-            Our Processes & Quality Journey
+          <div className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#007AFF] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase">
+             Mastering Metallurgy
+          </div>
+
+          <h1 className="text-4xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none mb-8">
+            Process <span className="metal-text">Integrity</span>
           </h1>
-          <p className="text-gray-300 max-w-3xl mx-auto text-sm sm:text-base">
-            Every casting passes through a defined, tightly controlled sequence
-            of steps — from tooling and wax to inspection and dispatch — to
-            ensure consistent quality and performance.
+
+          <p className="text-xl text-gray-400 font-medium italic max-w-2xl mx-auto leading-relaxed opacity-90">
+            Every component passes through a defined, tightly controlled sequence of steps to ensure consistent quality and performance.
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Center vertical timeline */}
-          <div className="hidden md:block absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-gradient-to-b from-sky-400/70 via-white/50 to-sky-400/70 shadow-[0_0_30px_rgba(56,189,248,0.6)]" />
+          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/5" />
+          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-gradient-to-b from-[#007AFF] via-[#007AFF]/50 to-transparent shadow-[0_0_15px_rgba(0,122,255,0.3)]" />
 
-          <div className="space-y-16">
+          <div className="space-y-32">
             {ProcessesData.map((step, index) => {
               const isEven = index % 2 === 0;
 
@@ -391,55 +385,40 @@ export default function ProcessesPage(): React.ReactElement {
                   key={step.id}
                   initial={{ opacity: 0, y: 60 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: index * 0.03 }}
-                  className={`relative flex flex-col lg:flex-row items-center gap-8 ${
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8 }}
+                  className={`relative flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${
                     isEven ? "lg:flex-row-reverse" : ""
                   }`}
                 >
                   {/* Connector dot */}
-                  <motion.div
-                    initial={{ scale: 0.6, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.4, delay: 0.2 }}
-                    className="hidden md:flex absolute left-1/2 -translate-x-1/2 bg-sky-400 w-8 h-8 rounded-full items-center justify-center shadow-[0_0_24px_rgba(56,189,248,0.8)] border-2 border-white/70"
-                    aria-hidden="true"
-                  >
-                    <span className="text-xs font-bold text-white">
-                      {step.id}
-                    </span>
-                  </motion.div>
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white rounded-full items-center justify-center z-20 shadow-[0_0_20px_rgba(255,255,255,1)] border-4 border-black" />
 
                   {/* Image card */}
                   <motion.div
-                    whileHover={{ y: -6, scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                    className={`w-full lg:w-[48%] rounded-3xl overflow-hidden border border-white/15 bg-black/40 shadow-[0_18px_55px_rgba(0,0,0,0.8)] ${
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className={`w-full lg:w-1/2 rounded-[40px] overflow-hidden glass-card shadow-2xl relative group ${
                       isEven ? "lg:mr-auto" : "lg:ml-auto"
                     }`}
                   >
-                    <div className="relative w-full h-52 sm:h-64 md:h-72">
+                    <div className="relative aspect-video">
                       <img
                         src={step.image}
                         alt={step.title}
                         loading="lazy"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-all duration-1000 scale-110 group-hover:scale-100"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
-
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                      
                       {/* Floating title bar */}
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <div className="inline-flex items-center gap-3 rounded-2xl bg-black/60 border border-white/20 px-4 py-2 backdrop-blur-xl">
-                          <div className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 border border-sky-400/60 text-sky-300 text-xl">
+                      <div className="absolute top-6 left-6">
+                        <div className="flex items-center gap-4 bg-black/60 border border-white/20 px-6 py-3 rounded-full backdrop-blur-xl">
+                          <div className="text-[#007AFF] text-2xl h-10 w-10 flex items-center justify-center bg-white/5 rounded-xl">
                             {step.icon}
                           </div>
-                          <div className="flex flex-col">
-                            <span className="text-[11px] uppercase tracking-[0.22em] text-sky-200">
-                              Step {index + 1}
-                            </span>
-                            <span className="text-sm sm:text-base font-semibold text-white">
-                              {step.title}
-                            </span>
+                          <div>
+                            <span className="block text-[8px] font-black uppercase tracking-[0.3em] text-[#007AFF] opacity-60">Step {step.id}</span>
+                            <span className="block text-sm font-black text-white uppercase italic tracking-tight">{step.title}</span>
                           </div>
                         </div>
                       </div>
@@ -448,28 +427,26 @@ export default function ProcessesPage(): React.ReactElement {
 
                   {/* Text card */}
                   <motion.div
-                    whileHover={{ y: -4, scale: 1.01 }}
-                    transition={{ duration: 0.3 }}
-                    className={`w-full lg:w-[48%] p-6 md:p-7 rounded-3xl border border-white/15 bg-white/8 backdrop-blur-2xl shadow-[0_14px_45px_rgba(0,0,0,0.7)] ${
+                    className={`w-full lg:w-1/2 p-12 rounded-[48px] glass-card relative overflow-hidden group ${
                       isEven ? "lg:ml-auto" : "lg:mr-auto"
                     }`}
                   >
-                    <div className="flex items-start gap-3 mb-4 lg:hidden">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-sky-400/60 text-sky-300 text-xl">
-                        {step.icon}
-                      </div>
-                      <div>
-                        <div className="text-[11px] uppercase tracking-[0.22em] text-sky-200">
-                          Step {index + 1}
-                        </div>
-                        <h2 className="text-lg md:text-xl font-semibold text-white">
-                          {step.title}
-                        </h2>
-                      </div>
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#007AFF]/5 blur-[100px] pointer-events-none" />
+                    <div className="lg:hidden flex items-center gap-4 mb-8">
+                       <div className="text-[#007AFF] text-xl h-10 w-10 flex items-center justify-center bg-white/5 rounded-xl">
+                         {step.icon}
+                       </div>
+                       <h2 className="text-2xl font-black text-white uppercase italic tracking-tight">{step.title}</h2>
                     </div>
 
-                    <div className="text-gray-200 text-sm sm:text-base leading-relaxed">
+                    <div className="text-gray-400 text-lg font-medium italic leading-relaxed opacity-90 prose prose-invert">
                       {step.description}
+                    </div>
+                   
+                    <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between opacity-40">
+                       <span className="text-[10px] font-black uppercase tracking-widest leading-none">Process Phase {step.id}</span>
+                       <div className="h-px flex-1 mx-4 bg-white/5" />
+                       <div className="w-2 h-2 rounded-full bg-[#007AFF]" />
                     </div>
                   </motion.div>
                 </motion.article>
@@ -481,3 +458,4 @@ export default function ProcessesPage(): React.ReactElement {
     </section>
   );
 }
+

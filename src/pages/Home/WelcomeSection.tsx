@@ -18,7 +18,7 @@ export default function WelcomeSection() {
 
   const tabs = {
     mission: {
-      title: "Our Mission",
+      title: "Mission",
       icon: ShieldCheck,
       content:
         "We deliver top-quality investment castings that redefine precision, reliability, and performance — built through disciplined processes and full transparency.",
@@ -31,12 +31,12 @@ export default function WelcomeSection() {
         {
           icon: Users,
           title: "Customer-Led Delivery",
-          desc: "Collaborative engineering and responsive planning for success.",
+          desc: "Collaborative engineering and responsive planning.",
         },
       ],
     },
     vision: {
-      title: "Our Vision",
+      title: "Vision",
       icon: Globe,
       content:
         "To transform the investment casting industry using advanced metallurgical, digital, and sustainable manufacturing technologies.",
@@ -44,17 +44,17 @@ export default function WelcomeSection() {
         {
           icon: Globe,
           title: "Technology-Forward",
-          desc: "AI, IoT and modern metallurgy for deeper insight and consistency.",
+          desc: "AI, IoT and modern metallurgy for deeper insight.",
         },
         {
           icon: Award,
           title: "Sustainable Growth",
-          desc: "Environment-first processes without compromising performance.",
+          desc: "Environment-first processes without compromise.",
         },
       ],
     },
     values: {
-      title: "Our Values",
+      title: "Values",
       icon: Handshake,
       content:
         "Integrity, accountability, and customer-first thinking guide every decision — building partnerships that grow stronger over time.",
@@ -66,7 +66,7 @@ export default function WelcomeSection() {
         },
         {
           icon: Smile,
-          title: "Continuous Improvement",
+          title: "Improvement",
           desc: "Investing in better processes and smarter technology.",
         },
       ],
@@ -83,184 +83,139 @@ export default function WelcomeSection() {
   ];
 
   return (
-    <motion.section
-      className="relative py-24 min-h-screen overflow-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      {/* Background */}
-      <motion.div
-        className="absolute inset-0"
-        animate={{ opacity: [1, 0.96, 1] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      >
-{/* ---------- Premium Metallic Background ---------- */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2b2b2b] to-[#1a1a1a]" />
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-25 mix-blend-overlay" />
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise.png')] opacity-10 animate-[pulse_8s_infinite]" />
-      <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/10 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40 pointer-events-none" />
-      </motion.div>
-
-      {/* Content */}
-      <motion.div
-        className="relative z-10 max-w-[1450px] mx-auto px-8 text-center"
-        animate={{ y: [0, -6, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      >
-        {/* Badge */}
-        <motion.div
-          className="mb-10 flex justify-center"
-          initial={{ opacity: 0, y: -12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+    <section className="relative py-32 overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
+        
+        {/* Header Section */}
+        <div className="max-w-5xl mx-auto text-center mb-24">
           <motion.div
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-1.5 text-sm text-sky-100 backdrop-blur shadow-lg"
-            animate={{ opacity: [1, 0.85, 1] }}
-            transition={{ duration: 4, repeat: Infinity }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mb-8"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-sky-400 animate-pulse" />
-            Precision Investment Casting • Rajkot, Gujarat
+            <div className="glass-card px-6 py-2 rounded-full border border-[#007AFF]/20 text-xs font-black tracking-widest text-[#007AFF] uppercase">
+               Precision since 2016
+            </div>
           </motion.div>
-        </motion.div>
 
-        {/* Hero Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mb-14"
-        >
-          <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-white to-sky-400 drop-shadow-xl mb-4"
-            animate={{ backgroundPosition: ["0%", "100%", "0%"] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            style={{ backgroundSize: "200% auto" }}
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-8xl font-black text-white tracking-tighter mb-10 leading-none uppercase italic"
           >
-            Padmaja Technocast LLP
-          </motion.h1>
+            Shaping the <span className="metal-text">Future</span> of Casting
+          </motion.h2>
 
-          <p className="text-gray-200 text-xl md:text-2xl font-semibold mb-6">
-            Welcome to the home of precision investment casting.
-          </p>
-
-          <div className="mx-auto h-px w-48 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent mb-7" />
-
-          {/* Intro paragraphs */}
-          <div className="max-w-4xl mx-auto text-left text-gray-300 text-lg leading-relaxed space-y-5">
-            {[
-              "Based in Rajkot, Gujarat, Padmaja Technocast LLP has shaped metal into precision components since 2016.",
-              "We support ferrous and non-ferrous alloys for valves, pumps, and engineering applications with dependable quality.",
-              "Purposeful design and controlled metallurgy ensure assemblies work better, last longer, and perform consistently.",
-            ].map((paragraph, i) => (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                {paragraph}
-              </motion.p>
-            ))}
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-xl md:text-2xl text-gray-300 font-medium italic opacity-90 leading-relaxed">
+              Based in Rajkot, Gujarat, Padmaja Technocast LLP has shaped metal into precision components for over a decade.
+            </p>
+            <div className="h-px w-24 bg-[#007AFF] mx-auto" />
+            <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
+              We support ferrous and non-ferrous alloys for valves, pumps, and engineering applications with dependable quality and controlled metallurgy.
+            </p>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Tabs */}
-        <div className="flex flex-col lg:flex-row gap-10">
-          <div className="flex-1">
-            {/* Tab Buttons */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-10">
+        {/* Dynamic Interaction Section */}
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left: Interactive Tabs */}
+          <div className="lg:col-span-12">
+            <div className="glass-card p-2 md:p-3 rounded-full flex flex-wrap justify-center gap-2 mb-12 max-w-2xl mx-auto">
               {Object.keys(tabs).map((key) => {
-                const tab = key as keyof typeof tabs;
-                const active = activeTab === tab;
-                const Icon = tabs[tab].icon;
+                const tabKey = key as keyof typeof tabs;
+                const active = activeTab === tabKey;
                 return (
-                  <motion.button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    whileHover={{ y: -2 }}
-                    className={`px-5 py-2.5 rounded-2xl text-base flex items-center gap-2 font-medium border transition-all ${
-                      active
-                        ? "bg-gradient-to-r from-sky-500/70 via-sky-400/80 to-sky-500/70 text-white border-white/30 shadow-xl"
-                        : "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10"
+                  <button
+                    key={tabKey}
+                    onClick={() => setActiveTab(tabKey)}
+                    className={`flex-1 min-w-[120px] px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-500 ${
+                      active ? "bg-[#007AFF] text-white shadow-lg shadow-[#007AFF]/40" : "text-gray-500 hover:text-white"
                     }`}
                   >
-                    <Icon className="w-5 h-5" />
-                    {tabs[tab].title}
-                  </motion.button>
+                    {tabs[tabKey].title}
+                  </button>
                 );
               })}
             </div>
 
-            {/* Tab Content */}
             <motion.div
               key={activeTab}
-              className="rounded-3xl bg-white/5 border border-white/15 backdrop-blur-xl p-7 shadow-xl mb-10"
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="grid lg:grid-cols-2 gap-12 items-center"
             >
-              <p className="text-gray-200 text-lg leading-relaxed">
-                {tabs[activeTab].content}
-              </p>
-            </motion.div>
-
-            {/* Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {tabs[activeTab].features.map((f, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="rounded-3xl bg-white/10 backdrop-blur-xl p-6 border border-white/20 shadow-lg text-center"
-                >
-                  <div className="h-14 w-14 mx-auto mb-3 flex items-center justify-center bg-sky-500/15 rounded-2xl border border-sky-400/40">
-                    <f.icon className="w-7 h-7 text-sky-300" />
+              <div className="glass-card p-12 rounded-[48px] border-[#007AFF]/10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#007AFF]/10 blur-[100px] pointer-events-none" />
+                <h3 className="text-3xl font-black text-white italic uppercase tracking-tighter mb-6 flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[#007AFF] rounded-2xl flex items-center justify-center">
+                    {(() => {
+                      const Icon = tabs[activeTab].icon;
+                      return <Icon className="text-white w-6 h-6" />;
+                    })()}
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-1">
-                    {f.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {f.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+                  {tabs[activeTab].title}
+                </h3>
+                <p className="text-xl text-gray-300 font-medium leading-relaxed italic mb-8">
+                  "{tabs[activeTab].content}"
+                </p>
+                <div className="h-1 w-20 bg-[#007AFF]" />
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                {tabs[activeTab].features.map((f, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="glass-card p-8 rounded-[40px] hover:border-[#007AFF]/30 transition-all group"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-[#007AFF]/20 group-hover:border-[#007AFF]/40 transition-all">
+                      <f.icon className="w-6 h-6 text-[#007AFF]" />
+                    </div>
+                    <h4 className="text-white font-black uppercase tracking-tight text-lg mb-3">{f.title}</h4>
+                    <p className="text-gray-400 text-sm italic leading-relaxed">{f.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom: Aims */}
+          <div className="lg:col-span-12 mt-20">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass-card p-12 md:p-20 rounded-[60px] relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-full metal-texture opacity-5" />
+              <h3 className="text-3xl md:text-5xl font-black text-white italic uppercase tracking-tighter mb-16 text-center">
+                Our Strategic <span className="metal-text">Objectives</span>
+              </h3>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+                {aims.map((aim, i) => (
+                  <div key={i} className="flex gap-6 items-start p-6 rounded-[32px] hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
+                    <div className="w-10 h-10 rounded-full bg-[#007AFF] flex items-center justify-center text-white font-black shrink-0">
+                      {i + 1}
+                    </div>
+                    <p className="text-gray-300 font-medium text-base leading-relaxed italic">
+                      {aim}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
-
-        {/* Aims */}
-        <motion.div
-          className="mt-16 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl p-8 shadow-2xl"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-white mb-6">We Aim To</h2>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            {aims.map((aim, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                whileHover={{ scale: 1.02 }}
-                className="flex gap-3 bg-white/5 p-4 rounded-2xl border border-white/10"
-              >
-                <span className="h-2.5 w-2.5 mt-1 rounded-full bg-sky-400" />
-                <p className="text-gray-200 text-base leading-relaxed">
-                  {aim}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }
+

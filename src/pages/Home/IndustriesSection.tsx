@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type JSX } from "react";
+import { type JSX } from "react";
 import { motion } from "framer-motion";
 
 type Industry = {
@@ -96,152 +96,98 @@ const industries: Industry[] = [
   },
 ];
 
-function CardImage({ src, alt }: { src: string; alt: string }) {
-  const [loaded, setLoaded] = useState(false);
-
-  return (
-    <div className="relative w-full overflow-hidden rounded-t-3xl bg-gray-900">
-      <div style={{ paddingTop: "60%" }} className="relative">
-        {!loaded && (
-          <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800" />
-        )}
-
-        <img
-          src={src}
-          alt={alt}
-          loading="lazy"
-          onLoad={() => setLoaded(true)}
-          className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out ${
-            loaded ? "opacity-100" : "opacity-0"
-          } group-hover:scale-105`}
-          draggable={false}
-        />
-
-        {/* top gradient for text legibility */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-      </div>
-    </div>
-  );
-}
 
 export default function IndustriesSection(): JSX.Element {
   return (
-    <section className="relative py-16 md:py-20 bg-[#05070b] text-white overflow-hidden">
-      {/* Background */}
-      <motion.div
-        className="absolute inset-0"
-        animate={{ opacity: [1, 0.96, 1] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      >
-        {/* ---------- Premium Metallic Background ---------- */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2b2b2b] to-[#1a1a1a]" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-25 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise.png')] opacity-10 animate-[pulse_8s_infinite]" />
-        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/10 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40 pointer-events-none" />
-      </motion.div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <section className="relative py-32 overflow-hidden">
+      <div className="relative z-10 container mx-auto px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1 text-xs sm:text-sm text-sky-100 backdrop-blur mb-4 shadow-[0_6px_24px_rgba(0,0,0,0.6)]">
-            <span className="h-1.5 w-1.5 rounded-full bg-sky-400 animate-pulse" />
-            Casting solutions across critical industries
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-xs font-bold tracking-[0.2em] text-[#007AFF] uppercase backdrop-blur-xl mb-8">
+            <span className="h-2 w-2 rounded-full bg-[#007AFF] animate-ping" />
+            Global Industry Support
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-white to-sky-400 drop-shadow-xl mb-3">
-            Industries We Serve
+          <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-8 uppercase italic leading-tight">
+            Industries <span className="metal-text">We Serve</span>
           </h2>
 
-          <div className="mx-auto h-px w-32 bg-gradient-to-r from-transparent via-sky-400/70 to-transparent mb-4" />
-
-          <p className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-gray-300">
-            From defence and medical to marine and transportation, our
-            investment castings support applications where reliability, finish
-            and dimensional accuracy matter.
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 font-medium leading-relaxed italic">
+            "Precision investment castings for mission-critical applications where failure is not an option."
           </p>
         </motion.div>
 
         {/* Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { staggerChildren: 0.06, duration: 0.3 },
-            },
-          }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"
-        >
-          {industries.map((item) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {industries.map((item, idx) => (
             <motion.article
               key={item.id}
-              variants={{
-                hidden: { opacity: 0, y: 25 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 220, damping: 16 }}
-              className="group relative flex flex-col rounded-3xl overflow-hidden border border-white/12 bg-gradient-to-b from-white/10 via-black/40 to-black/70 shadow-[0_14px_45px_rgba(0,0,0,0.85)]"
-              aria-labelledby={`industry-${item.id}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group glass-card rounded-[40px] overflow-hidden flex flex-col shadow-2xl transition-all duration-500"
             >
-              {/* Image */}
-              <CardImage src={item.image} alt={item.title} />
-
-              {/* Floating badge */}
-              <div className="pointer-events-none absolute right-4 top-4 rounded-full bg-black/60 border border-white/25 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-sky-100 backdrop-blur">
-                Casting solutions
+              {/* Image Container */}
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-all duration-700 scale-110 group-hover:scale-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                
+                <div className="absolute bottom-6 left-8 right-8">
+                   <p className="text-[#007AFF] text-[10px] font-black tracking-widest uppercase mb-1">
+                    {item.category}
+                  </p>
+                  <h3 className="text-2xl font-black text-white tracking-tight uppercase italic whitespace-nowrap overflow-hidden text-ellipsis">
+                    {item.title}
+                  </h3>
+                </div>
               </div>
 
               {/* Content */}
-              <div className="flex flex-col flex-1 p-5 sm:p-6">
-                <h3
-                  id={`industry-${item.id}`}
-                  className="text-lg sm:text-xl font-semibold text-white mb-1"
-                >
-                  {item.title}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-sky-200 mb-2">
-                  {item.category}
+              <div className="p-8 pb-10 flex flex-col flex-1 relative">
+                <p className="text-gray-400 text-sm leading-relaxed mb-8 italic">
+                   {item.description}
                 </p>
 
-                {/* Materials as chips */}
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {item.materials.split(",").map((mat) => (
-                    <span
-                      key={mat.trim()}
-                      className="rounded-full border border-white/20 bg-white/5 px-2.5 py-0.5 text-[11px] text-gray-100"
-                    >
-                      {mat.trim()}
-                    </span>
-                  ))}
+                {/* Materials */}
+                <div className="mt-auto pt-6 border-t border-white/5">
+                  <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-3">Key Materials</p>
+                  <div className="flex flex-wrap gap-2">
+                    {item.materials.split(",").slice(0, 3).map((mat) => (
+                      <span
+                        key={mat.trim()}
+                        className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-[10px] font-bold text-[#007AFF]/70"
+                      >
+                        {mat.trim()}
+                      </span>
+                    ))}
+                    {item.materials.split(",").length > 3 && (
+                      <span className="text-[10px] font-bold text-gray-500 flex items-center px-1">
+                        +{item.materials.split(",").length - 3} MORE
+                      </span>
+                    )}
+                  </div>
                 </div>
 
-                <p className="text-gray-200 text-sm sm:text-[15px] leading-relaxed line-clamp-4">
-                  {item.description}
-                </p>
-
-                {/* bottom accent line */}
-                <div className="mt-4 h-px w-16 bg-gradient-to-r from-sky-400/80 to-transparent" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#007AFF]/5 blur-[60px] rounded-full group-hover:bg-[#007AFF]/10 transition-colors pointer-events-none" />
               </div>
-
-              {/* Hover glass highlight */}
-              <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-tr from-white/10 via-transparent to-sky-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 }
+

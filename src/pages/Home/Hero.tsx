@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import { Download } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type JSX } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 type Slide = {
   id: number;
@@ -56,129 +57,151 @@ export default function Hero(): JSX.Element {
 
   // Parallax Background Movement
   useEffect(() => {
-    const handleScroll = () => setOffsetY(window.scrollY * 0.12);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      let ticking = false;
+      const onScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            setOffsetY(window.scrollY * 0.1);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      return () => window.removeEventListener("scroll", onScroll);
+    };
+    handleScroll();
   }, []);
 
   // Metallic floating particles
   const particles = useMemo(
     () =>
-      [...Array(28)].map(() => ({
+      [...Array(15)].map(() => ({
         top: `${Math.random() * 100}%`,
         left: `${Math.random() * 100}%`,
-        dur: `${3 + Math.random() * 3}s`,
-        delay: `${Math.random() * 2}s`,
-        size: `${1 + Math.random() * 2}px`,
-        opacity: `${0.06 + Math.random() * 0.12}`,
+        dur: `${10 + Math.random() * 10}s`,
+        delay: `${Math.random() * 5}s`,
+        size: `${Math.random() * 2 + 1}px`,
+        opacity: `${0.1 + Math.random() * 0.1}`,
       })),
     []
   );
 
-  // Slider settings: autoplay, infinite, no arrows, no pause on hover
+  // Slider settings
   const settings = {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     arrows: false,
     fade: true,
-    speed: 900,
+    speed: 1200,
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
-    pauseOnFocus: false,
-    cssEase: "ease",
-    afterChange: (i: number) => {
-      setActive(i);
-    },
+    afterChange: (i: number) => setActive(i),
     appendDots: (dots: React.ReactNode) => (
-      <div className="absolute bottom-6 w-full flex justify-center z-30 pointer-events-auto">
-        <ul className="flex gap-3">{dots}</ul>
+      <div className="absolute bottom-12 w-full flex justify-center z-30 pointer-events-auto">
+        <ul className="flex gap-4 p-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10">{dots}</ul>
       </div>
     ),
     customPaging: (i: number) => (
       <div
-        className={`w-2.5 h-2.5 rounded-full transition-all ${
-          i === active ? "scale-110 bg-white" : "bg-white/40"
+        className={`h-1.5 transition-all duration-500 rounded-full ${
+          i === active ? "w-8 bg-[#007AFF] shadow-[0_0_10px_rgba(0,122,255,0.8)]" : "w-1.5 bg-white/20"
         }`}
       />
     ),
-    lazyLoad: "ondemand" as const,
   };
 
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f1112] via-[#1a1c1e] to-[#0f1112]" />
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-20 mix-blend-overlay" />
-      <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+    <section className="relative w-full h-[85vh] md:h-screen overflow-hidden">
+      {/* Background Layer */}
+      <div className="absolute inset-0 bg-[#000]" />
+      <div className="metal-texture" />
+      
+      {/* Ambient Glows */}
+      <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[#007AFF]/10 blur-[160px] rounded-full animate-pulse" />
+      <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-indigo-500/10 blur-[160px] rounded-full animate-pulse" />
 
-      {/* metallic particles */}
+      {/* Floating Particles */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         {particles.map((p, idx) => (
           <span
             key={idx}
-            className="absolute rounded-full animate-float"
+            className="absolute rounded-full animate-pulse"
             style={{
               top: p.top,
               left: p.left,
               width: p.size,
               height: p.size,
-              background: `rgba(255,255,255,${p.opacity})`,
-              animationDuration: p.dur,
-              animationDelay: p.delay,
+              background: `white`,
+              opacity: p.opacity,
             }}
           />
         ))}
       </div>
 
-      <div className="relative z-20">
+      <div className="relative z-20 h-full">
         <Slider ref={sliderRef} {...settings}>
           {slides.map((slide) => (
-            <div key={slide.id} className="relative w-full h-[70vh] md:h-[95vh]">
-              <img
-                src={slide.image}
-                alt={slide.alt ?? slide.heading}
-                className="absolute inset-0 w-full h-full object-cover will-change-transform"
-                style={{
-                  transform: `translate3d(0, ${offsetY * 0.18}px, 0)`,
-                  transition: "transform 0.35s ease-out",
-                }}
-                loading="lazy"
-              />
+            <div key={slide.id} className="relative w-full h-[85vh] md:h-screen">
+              {/* IMAGE WITH PARALLAX */}
+              <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+                <img
+                  src={slide.image}
+                  alt={slide.alt ?? slide.heading}
+                  className="absolute inset-0 w-full h-full object-cover scale-110"
+                  style={{
+                    transform: `translateY(${offsetY}px)`,
+                    transition: "transform 0.1s linear",
+                    willChange: "transform",
+                  }}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
+              </div>
 
-              <div className="absolute inset-0 bg-black/40" />
+              {/* HERO CONTENT */}
+              <div className="relative z-30 flex items-center justify-center h-full px-6">
+                <div className="max-w-5xl text-center">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white tracking-tighter leading-[0.9] mb-8 uppercase italic">
+                      {slide.heading.split(' ').map((word, i) => (
+                        <span key={i} className={i % 2 !== 0 ? "text-[#007AFF] block sm:inline" : "block sm:inline"}>
+                          {word}{' '}
+                        </span>
+                      ))}
+                    </h1>
+                    
+                    <p className="text-gray-300 text-lg md:text-2xl font-medium max-w-2xl mx-auto mb-12 tracking-tight opacity-90 leading-relaxed">
+                      {slide.text}
+                    </p>
 
-              {/* HERO TEXT */}
-              <div className="relative z-30 flex items-center justify-center h-full">
-                <div className="text-center px-4 sm:px-6 max-w-3xl">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-white to-sky-400 drop-shadow">
-                    {slide.heading}
-                  </h2>
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                      <Link
+                        to="/contact"
+                        className="liquid-button bg-white text-black px-10 py-5 text-lg font-black uppercase tracking-widest hover:bg-[#007AFF] hover:text-white transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center group"
+                      >
+                        Start Project
+                        <div className="ml-3 w-2 h-2 rounded-full bg-black group-hover:bg-white animate-ping" />
+                      </Link>
 
-                  <p className="text-gray-200 text-base sm:text-lg md:text-xl mb-6">
-                    {slide.text}
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                    <a
-                      href="https://drive.google.com/file/d/1QAYFwIyTIqDj_3CvtINoLY8nrnRsAT7U/view?usp=drive_link"
-                      download
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-md text-sm sm:text-base font-semibold bg-white/10 border border-white/20 text-white shadow hover:bg-white/20 transition"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download Brochure
-                    </a>
-
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center justify-center px-5 py-3 rounded-md text-sm sm:text-base font-semibold bg-white/10 border border-white/20 text-white shadow hover:bg-white/20 transition"
-                    >
-                      Contact Us
-                    </Link>
-                  </div>
+                      <a
+                        href="https://drive.google.com/file/d/1QAYFwIyTIqDj_3CvtINoLY8nrnRsAT7U/view?usp=drive_link"
+                        download
+                        className="glass-card px-10 py-5 rounded-full text-lg font-bold text-white hover:bg-white/10 transition-all flex items-center gap-3 backdrop-blur-xl"
+                      >
+                        <Download className="w-5 h-5" />
+                        Brochure
+                      </a>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </div>

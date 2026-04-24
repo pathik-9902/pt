@@ -101,8 +101,8 @@ body {
   transform: scale(0.96);
 }
 
-.metal-text {
-  background: linear-gradient(to bottom, #ffffff 0%, #39569C 100%);
+h1, h2, h3, h4, h5, h6, .metal-text {
+  background: linear-gradient(to bottom, #eef2fa 0%, #9cb2d4 40%, #5270a7 70%, #39569C 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

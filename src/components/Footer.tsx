@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <img src={Logo} alt="Logo" className="w-14 h-14" />
               <h2 className="text-2xl font-black text-white italic uppercase tracking-tighter leading-none">
-                Padmaja <span className="#007AFF">Technocast</span>
+                Padmaja <span className="white">Technocast</span>
               </h2>
             </div>
             <p className="text-gray-400 font-medium italic leading-relaxed opacity-80">
@@ -23,7 +23,7 @@ export default function Footer() {
 
           {/* Links */}
           <div className="space-y-8">
-            <h3 className="text-xs font-black #007AFF uppercase tracking-[0.3em]">Quick Links</h3>
+            <h3 className="text-xs font-black white uppercase tracking-[0.3em]">Quick Links</h3>
             <ul className="space-y-4">
               {[
                 { label: "About", href: "/about" },
@@ -34,7 +34,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-white font-black uppercase italic tracking-tight hover:#007AFF transition-colors duration-300 text-lg"
+                    className="text-white font-black uppercase italic tracking-tight hover:white transition-colors duration-300 text-lg"
                   >
                     {link.label}
                   </Link>
@@ -45,27 +45,27 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="space-y-8">
-            <h3 className="text-xs font-black #007AFF uppercase tracking-[0.3em]">Direct Support</h3>
+            <h3 className="text-xs font-black white uppercase tracking-[0.3em]">Direct Support</h3>
             <div className="space-y-6">
               <a href="mailto:info@padmajatechnocast.com" className="block group">
                 <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Email</p>
-                <p className="text-white font-bold group-hover:#007AFF transition-colors">info@padmajatechnocast.com</p>
+                <p className="text-white font-bold group-hover:white transition-colors">info@padmajatechnocast.com</p>
               </a>
               <a href="tel:+919998140607" className="block group">
                 <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Phone</p>
-                <p className="text-white font-bold group-hover:#007AFF transition-colors">+91 99981 40607</p>
+                <p className="text-white font-bold group-hover:white transition-colors">+91 99981 40607</p>
               </a>
             </div>
           </div>
 
           {/* Address */}
           <div className="space-y-8">
-            <h3 className="text-xs font-black #007AFF uppercase tracking-[0.3em]">Location</h3>
+            <h3 className="text-xs font-black white uppercase tracking-[0.3em]">Location</h3>
             <address className="not-italic text-sm font-medium italic text-gray-400 leading-relaxed space-y-2 opacity-80">
               <p className="text-white font-black uppercase not-italic tracking-tight">Plant & Headquarters</p>
               <p>Avadh Industrial Hub, NH-27</p>
               <p>Biliyala, Rajkot, Gujarat</p>
-              <p className="text-[10px] font-black tracking-widest #007AFF/40">INDIA - 360311</p>
+              <p className="text-[10px] font-black tracking-widest white/40">INDIA - 360311</p>
             </address>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function Footer() {
               <a
                 key={idx}
                 href="#"
-                className="w-12 h-12 glass-card rounded-full flex items-center justify-center text-white hover:bg-[#007AFF] hover:text-white transition-all shadow-xl"
+                className="w-12 h-12 glass-card rounded-full flex items-center justify-center text-white hover:bg-[white] hover:text-white transition-all shadow-xl"
               >
                 <Icon size={18} />
               </a>

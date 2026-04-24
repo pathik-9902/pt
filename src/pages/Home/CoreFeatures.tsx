@@ -6,28 +6,28 @@ import { BadgeCheck, Wrench, DollarSign, Smile } from "lucide-react";
 const features = [
   {
     id: 1,
-    icon: <BadgeCheck size={36} className="text-[#007AFF]" />,
+    icon: <BadgeCheck size={36} className="text-[white]" />,
     title: "Quality Assurance",
     description:
       "Ensuring top quality through strict compliance with international standards.",
   },
   {
     id: 2,
-    icon: <Wrench size={36} className="text-[#007AFF]" />,
+    icon: <Wrench size={36} className="text-[white]" />,
     title: "Certified Mechanics",
     description:
       "Skilled and certified professionals delivering precision engineering.",
   },
   {
     id: 3,
-    icon: <DollarSign size={36} className="text-[#007AFF]" />,
+    icon: <DollarSign size={36} className="text-[white]" />,
     title: "Competitive Prices",
     description:
       "Offering cost-effective solutions without compromising quality.",
   },
   {
     id: 4,
-    icon: <Smile size={36} className="text-[#007AFF]" />,
+    icon: <Smile size={36} className="text-[white]" />,
     title: "Client Satisfaction",
     description:
       "Building trust and long-term relationships with our valued clients.",
@@ -59,17 +59,17 @@ export default function CoreFeatures() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="glass-card rounded-[32px] p-10 relative group transition-all duration-500 hover:shadow-[#007AFF]/10"
+              className="glass-card rounded-[32px] p-10 relative group transition-all duration-500 hover:shadow-[white]/10"
             >
               <div className="flex justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <div className="w-16 h-16 rounded-2xl bg-[#007AFF]/10 flex items-center justify-center border border-[#007AFF]/20 group-hover:bg-[#007AFF]/20 transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-[white]/10 flex items-center justify-center border border-[white]/20 group-hover:bg-[white]/20 transition-colors">
                    {feature.icon}
                 </div>
               </div>
               <h3 className="text-xl font-black text-white mb-3 uppercase tracking-tight">{feature.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed italic opacity-80">{feature.description}</p>
               
-              <div className="absolute inset-0 rounded-[32px] bg-[#007AFF]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 rounded-[32px] bg-[white]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.div>
           ))}
         </div>

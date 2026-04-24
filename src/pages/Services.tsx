@@ -226,7 +226,7 @@ export default function ServicesSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#007AFF] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase"
+            className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[white] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase"
           >
             <Layers size={14} />
             Full-Spectrum Casting Solutions
@@ -250,12 +250,12 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card rounded-[40px] p-10 hover:border-[#007AFF]/30 transition-all group"
+              className="glass-card rounded-[40px] p-10 hover:border-[white]/30 transition-all group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#007AFF]/10 flex items-center justify-center mb-6 border border-[#007AFF]/20 group-hover:bg-[#007AFF]/20 transition-all">
-                <h.icon className="text-[#007AFF] w-7 h-7" />
+              <div className="w-14 h-14 rounded-2xl bg-[white]/10 flex items-center justify-center mb-6 border border-[white]/20 group-hover:bg-[white]/20 transition-all">
+                <h.icon className="text-[white] w-7 h-7" />
               </div>
-              <div className="text-[10px] font-black text-[#007AFF]/60 tracking-[0.2em] uppercase mb-2">
+              <div className="text-[10px] font-black text-[white]/60 tracking-[0.2em] uppercase mb-2">
                 {h.tag}
               </div>
               <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-4 italic leading-tight">
@@ -269,7 +269,7 @@ export default function ServicesSection() {
         {/* SECTORS + CAPABILITIES */}
         <div className="grid xl:grid-cols-12 gap-12 mb-32 items-start">
           <div className="xl:col-span-8">
-            <h3 className="text-3xl font-black text-white italic uppercase tracking-tighter mb-10 pl-4 border-l-4 border-[#007AFF]">
+            <h3 className="text-3xl font-black text-white italic uppercase tracking-tighter mb-10 pl-4 border-l-4 border-[white]">
               Sector Specializations
             </h3>
 
@@ -284,12 +284,12 @@ export default function ServicesSection() {
                   className="glass-card rounded-[32px] p-8 hover:bg-white/[0.05] transition-all"
                 >
                   <div className="text-white font-black uppercase tracking-tight mb-1">{s.title}</div>
-                  <div className="text-[#007AFF] text-[10px] font-bold tracking-widest uppercase mb-6 opacity-70">{s.sub}</div>
+                  <div className="text-[white] text-[10px] font-bold tracking-widest uppercase mb-6 opacity-70">{s.sub}</div>
 
                   <ul className="space-y-3">
                     {s.items.map((item) => (
                       <li key={item} className="flex gap-3 items-center text-gray-400 text-sm font-medium italic">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#007AFF]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[white]" />
                         {item}
                       </li>
                     ))}
@@ -300,8 +300,8 @@ export default function ServicesSection() {
           </div>
 
           <div className="xl:col-span-4 lg:sticky lg:top-32">
-            <div className="glass-card rounded-[48px] p-12 border-[#007AFF]/20 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-[#007AFF]/5 blur-[100px] pointer-events-none" />
+            <div className="glass-card rounded-[48px] p-12 border-[white]/20 relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-64 h-64 bg-[white]/5 blur-[100px] pointer-events-none" />
                <h4 className="text-2xl font-black text-white italic uppercase tracking-tighter mb-10">Technical Scope</h4>
 
                 <div className="space-y-8 relative z-10">
@@ -317,7 +317,7 @@ export default function ServicesSection() {
 
                   <div>
                     <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-2">Material Standard</p>
-                    <p className="text-[#007AFF] font-bold text-sm tracking-tight">ASTM, AISI, DIN, EN, GOST, GIS</p>
+                    <p className="text-[white] font-bold text-sm tracking-tight">ASTM, AISI, DIN, EN, GOST, GIS</p>
                   </div>
                   
                   <div className="pt-8 border-t border-white/5 font-medium italic text-gray-400">
@@ -345,7 +345,7 @@ export default function ServicesSection() {
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-white/5" />
           <Link
             to="/contact"
-            className="liquid-button relative z-10 glass-card bg-white text-black px-12 py-6 text-xl font-black uppercase tracking-[0.2em] hover:bg-[#007AFF] hover:text-white transition-all shadow-2xl flex items-center justify-center gap-4 max-w-sm mx-auto group"
+            className="liquid-button relative z-10 glass-card bg-white text-black px-12 py-6 text-xl font-black uppercase tracking-[0.2em] hover:bg-[white] hover:text-white transition-all shadow-2xl flex items-center justify-center gap-4 max-w-sm mx-auto group"
           >
             Start Project
             <ChevronRight className="group-hover:translate-x-2 transition-transform" size={24} />

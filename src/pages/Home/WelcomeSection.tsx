@@ -94,7 +94,7 @@ export default function WelcomeSection() {
             viewport={{ once: true }}
             className="flex justify-center mb-8"
           >
-            <div className="glass-card px-6 py-2 rounded-full border border-[#007AFF]/20 text-xs font-black tracking-widest text-[#007AFF] uppercase">
+            <div className="glass-card px-6 py-2 rounded-full border border-[white]/20 text-xs font-black tracking-widest text-[white] uppercase">
                Precision since 2016
             </div>
           </motion.div>
@@ -112,7 +112,7 @@ export default function WelcomeSection() {
             <p className="text-xl md:text-2xl text-gray-300 font-medium italic opacity-90 leading-relaxed">
               Based in Rajkot, Gujarat, Padmaja Technocast LLP has shaped metal into precision components for over a decade.
             </p>
-            <div className="h-px w-24 bg-[#007AFF] mx-auto" />
+            <div className="h-px w-24 bg-[white] mx-auto" />
             <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
               We support ferrous and non-ferrous alloys for valves, pumps, and engineering applications with dependable quality and controlled metallurgy.
             </p>
@@ -133,7 +133,7 @@ export default function WelcomeSection() {
                     key={tabKey}
                     onClick={() => setActiveTab(tabKey)}
                     className={`flex-1 min-w-[120px] px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-500 ${
-                      active ? "bg-[#007AFF] text-white shadow-lg shadow-[#007AFF]/40" : "text-gray-500 hover:text-white"
+                      active ? "bg-[white] text-white shadow-lg shadow-[white]/40" : "text-gray-500 hover:text-white"
                     }`}
                   >
                     {tabs[tabKey].title}
@@ -149,10 +149,10 @@ export default function WelcomeSection() {
               transition={{ duration: 0.5 }}
               className="grid lg:grid-cols-2 gap-12 items-center"
             >
-              <div className="glass-card p-12 rounded-[48px] border-[#007AFF]/10 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#007AFF]/10 blur-[100px] pointer-events-none" />
+              <div className="glass-card p-12 rounded-[48px] border-[white]/10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[white]/10 blur-[100px] pointer-events-none" />
                 <h3 className="text-3xl font-black text-white italic uppercase tracking-tighter mb-6 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#007AFF] rounded-2xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[white] rounded-2xl flex items-center justify-center">
                     {(() => {
                       const Icon = tabs[activeTab].icon;
                       return <Icon className="text-white w-6 h-6" />;
@@ -163,7 +163,7 @@ export default function WelcomeSection() {
                 <p className="text-xl text-gray-300 font-medium leading-relaxed italic mb-8">
                   "{tabs[activeTab].content}"
                 </p>
-                <div className="h-1 w-20 bg-[#007AFF]" />
+                <div className="h-1 w-20 bg-[white]" />
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -173,10 +173,10 @@ export default function WelcomeSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="glass-card p-8 rounded-[40px] hover:border-[#007AFF]/30 transition-all group"
+                    className="glass-card p-8 rounded-[40px] hover:border-[white]/30 transition-all group"
                   >
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-[#007AFF]/20 group-hover:border-[#007AFF]/40 transition-all">
-                      <f.icon className="w-6 h-6 text-[#007AFF]" />
+                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-[white]/20 group-hover:border-[white]/40 transition-all">
+                      <f.icon className="w-6 h-6 text-[white]" />
                     </div>
                     <h4 className="text-white font-black uppercase tracking-tight text-lg mb-3">{f.title}</h4>
                     <p className="text-gray-400 text-sm italic leading-relaxed">{f.desc}</p>
@@ -202,7 +202,7 @@ export default function WelcomeSection() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
                 {aims.map((aim, i) => (
                   <div key={i} className="flex gap-6 items-start p-6 rounded-[32px] hover:bg-white/5 transition-colors border border-transparent hover:border-white/10">
-                    <div className="w-10 h-10 rounded-full bg-[#007AFF] flex items-center justify-center text-white font-black shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[white] flex items-center justify-center text-white font-black shrink-0">
                       {i + 1}
                     </div>
                     <p className="text-gray-300 font-medium text-base leading-relaxed italic">

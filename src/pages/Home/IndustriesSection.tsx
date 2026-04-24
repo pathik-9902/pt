@@ -109,8 +109,8 @@ export default function IndustriesSection(): JSX.Element {
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-xs font-bold tracking-[0.2em] text-[#007AFF] uppercase backdrop-blur-xl mb-8">
-            <span className="h-2 w-2 rounded-full bg-[#007AFF] animate-ping" />
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-xs font-bold tracking-[0.2em] text-[white] uppercase backdrop-blur-xl mb-8">
+            <span className="h-2 w-2 rounded-full bg-[white] animate-ping" />
             Global Industry Support
           </div>
 
@@ -146,7 +146,7 @@ export default function IndustriesSection(): JSX.Element {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                 
                 <div className="absolute bottom-6 left-8 right-8">
-                   <p className="text-[#007AFF] text-[10px] font-black tracking-widest uppercase mb-1">
+                   <p className="text-[white] text-[10px] font-black tracking-widest uppercase mb-1">
                     {item.category}
                   </p>
                   <h3 className="text-2xl font-black text-white tracking-tight uppercase italic whitespace-nowrap overflow-hidden text-ellipsis">
@@ -168,7 +168,7 @@ export default function IndustriesSection(): JSX.Element {
                     {item.materials.split(",").slice(0, 3).map((mat) => (
                       <span
                         key={mat.trim()}
-                        className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-[10px] font-bold text-[#007AFF]/70"
+                        className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-[10px] font-bold text-[white]/70"
                       >
                         {mat.trim()}
                       </span>
@@ -181,7 +181,7 @@ export default function IndustriesSection(): JSX.Element {
                   </div>
                 </div>
 
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#007AFF]/5 blur-[60px] rounded-full group-hover:bg-[#007AFF]/10 transition-colors pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[white]/5 blur-[60px] rounded-full group-hover:bg-[white]/10 transition-colors pointer-events-none" />
               </div>
             </motion.article>
           ))}

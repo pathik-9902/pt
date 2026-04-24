@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Monochrome Elegance - High-End Technocast Palette */
+  /* Elegant Liquid UI - Dark Shiny Black & Subtle Blue Palette */
   --bg-deep-metal: #000000;
-  --bg-plate: radial-gradient(circle at 50% 0%, #151515 0%, #000000 80%);
-  --accent-primary: #FFFFFF; /* Pure White Accent */
-  --accent-glow: rgba(255, 255, 255, 0.25);
-  --text-primary: #FFFFFF;
-  --text-muted: #888888;
+  /* Shiny black effect using a subtle dark gray radial gradient */
+  --bg-plate: radial-gradient(circle at 50% 0%, #1c1c1e 0%, #000000 70%);
+  --accent-primary: #4A90E2; /* Subtle, elegant soft blue */
+  --accent-glow: rgba(74, 144, 226, 0.3);
+  --text-primary: #f5f5f7;
+  --text-muted: #8e8e93;
   
-  /* Glassmorphism - Premium Polish */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-blur: blur(24px);
+  /* Glassmorphism - Premium Liquid Polish */
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-blur: blur(20px);
   
-  /* Typography - Clean & Modern */
+  /* Typography - Clean & Modern Liquid */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -54,73 +55,59 @@ body {
   }
 }
 
-/* Premium Utilities */
+/* Premium Liquid Utilities */
 
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-  border-radius: 24px;
+  border-radius: 28px; /* Softer liquid corners */
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 40px rgba(255, 255, 255, 0.05);
+  border-color: rgba(74, 144, 226, 0.4);
+  box-shadow: 0 8px 40px rgba(74, 144, 226, 0.1);
 }
 
 .liquid-button {
-  background: transparent;
-  color: var(--accent-primary);
-  padding: 12px 32px;
+  background: var(--accent-primary);
+  color: #fff;
+  padding: 14px 36px;
   border-radius: 999px;
   font-weight: 600;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  border: 1px solid var(--accent-primary);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-}
-
-.liquid-button::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: var(--accent-primary);
-  z-index: -1;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px var(--accent-glow);
 }
 
 .liquid-button:hover {
-  color: #000;
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-
-.liquid-button:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--accent-glow);
+  color: #fff;
 }
 
 .liquid-button:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
 }
 
 .metal-text {
-  background: linear-gradient(135deg, #ffffff 0%, #888888 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #4A90E2 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
-  animation: shine 5s linear infinite;
+  animation: shine 6s linear infinite;
 }
 
 @keyframes shine {
@@ -153,21 +140,30 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: #2a2a2c;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: var(--accent-primary);
 }
 
 /* Selection */
 ::selection {
-  background: #fff;
-  color: #000;
+  background: var(--accent-primary);
+  color: #fff;
 }
 
 /* Premium Motion Utilities */
+.animate-liquid {
+  animation: liquid-shape 10s ease-in-out infinite alternate;
+}
+
+@keyframes liquid-shape {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -182,15 +178,15 @@ html {
 .metal-texture {
   position: absolute;
   inset: 0;
-  opacity: 0.03;
+  opacity: 0.04;
   pointer-events: none;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
 }
 
 .grain {
   position: absolute;
   inset: 0;
-  opacity: 0.1;
+  opacity: 0.15;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

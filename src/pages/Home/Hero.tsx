@@ -109,7 +109,7 @@ export default function Hero(): JSX.Element {
     customPaging: (i: number) => (
       <div
         className={`h-1.5 transition-all duration-500 rounded-full ${
-          i === active ? "w-8 bg-[#007AFF] shadow-[0_0_10px_rgba(0,122,255,0.8)]" : "w-1.5 bg-white/20"
+          i === active ? "w-8 bg-[white] shadow-[0_0_15px_rgba(255,255,255,0.6)]" : "w-1.5 bg-white/20"
         }`}
       />
     ),
@@ -122,7 +122,7 @@ export default function Hero(): JSX.Element {
       <div className="metal-texture" />
       
       {/* Ambient Glows */}
-      <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[#007AFF]/10 blur-[160px] rounded-full animate-pulse" />
+      <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[white]/10 blur-[160px] rounded-full animate-pulse" />
       <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-indigo-500/10 blur-[160px] rounded-full animate-pulse" />
 
       {/* Floating Particles */}
@@ -173,7 +173,7 @@ export default function Hero(): JSX.Element {
                   >
                     <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white tracking-tighter leading-[0.9] mb-8 uppercase italic">
                       {slide.heading.split(' ').map((word, i) => (
-                        <span key={i} className={i % 2 !== 0 ? "text-[#007AFF] block sm:inline" : "block sm:inline"}>
+                        <span key={i} className={i % 2 !== 0 ? "text-[white] block sm:inline" : "block sm:inline"}>
                           {word}{' '}
                         </span>
                       ))}
@@ -186,7 +186,7 @@ export default function Hero(): JSX.Element {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                       <Link
                         to="/contact"
-                        className="liquid-button bg-white text-black px-10 py-5 text-lg font-black uppercase tracking-widest hover:bg-[#007AFF] hover:text-white transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center group"
+                        className="liquid-button bg-white text-black px-10 py-5 text-lg font-black uppercase tracking-widest hover:bg-[white] hover:text-white transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center group"
                       >
                         Start Project
                         <div className="ml-3 w-2 h-2 rounded-full bg-black group-hover:bg-white animate-ping" />

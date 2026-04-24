@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 glass-card rounded-[32px] px-6 py-3 transition-all duration-500 hover:shadow-[#007AFF]/10">
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 glass-card rounded-[32px] px-6 py-3 transition-all duration-500 hover:shadow-[white]/10">
         <div className="flex justify-between items-center">
 
           {/* Logo + Brand */}
@@ -27,7 +27,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
           >
             <div className="relative">
-              <div className="absolute -inset-2 bg-[#007AFF]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute -inset-2 bg-[white]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
               <img
                 src={logo}
                 alt="Padmaja Technocast Logo"
@@ -37,7 +37,7 @@ export default function Navbar() {
             </div>
 
             <div className="ml-3 leading-tight">
-              <span className="block text-base font-black tracking-tight text-white group-hover:text-[#007AFF] transition-colors">
+              <span className="block text-base font-black tracking-tight text-white group-hover:text-[white] transition-colors">
                 PADMAJA
               </span>
               <span className="block text-[10px] tracking-[0.3em] text-gray-400 font-bold uppercase">
@@ -54,7 +54,7 @@ export default function Navbar() {
                 to={link.href}
                 className={({ isActive }) =>
                   `px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative
-                  ${isActive ? "text-white bg-[#007AFF] shadow-lg shadow-[#007AFF]/30" : "text-gray-400 hover:text-white hover:bg-white/10"}`
+                  ${isActive ? "text-black bg-[white] shadow-lg shadow-[white]/30" : "text-gray-400 hover:text-white hover:bg-white/10"}`
                 }
               >
                 {link.label}
@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="liquid-button bg-white text-black px-6 py-2.5 text-sm font-bold hover:bg-[#007AFF] hover:text-white transition-all shadow-xl active:scale-95"
+              className="liquid-button bg-white text-black px-6 py-2.5 text-sm font-bold hover:bg-[white] hover:text-white transition-all shadow-xl active:scale-95"
             >
               Request Quote
             </Link>
@@ -94,7 +94,7 @@ export default function Navbar() {
                 to={link.href}
                 className={({ isActive }) =>
                   `p-4 rounded-2xl text-base font-bold transition-all
-                  ${isActive ? "text-[#007AFF] bg-[#007AFF]/10" : "text-gray-300 hover:bg-white/5"}`
+                  ${isActive ? "text-[white] bg-[white]/10" : "text-gray-300 hover:bg-white/5"}`
                 }
                 onClick={() => setIsOpen(false)}
               >
@@ -103,7 +103,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/contact"
-              className="mt-4 p-4 rounded-[24px] bg-[#007AFF] text-white font-bold text-center shadow-lg active:scale-95 transition-transform"
+              className="mt-4 p-4 rounded-[24px] bg-[white] text-black font-bold text-center shadow-lg active:scale-95 transition-transform"
               onClick={() => setIsOpen(false)}
             >
               Get a Quote

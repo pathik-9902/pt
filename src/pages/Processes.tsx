@@ -358,7 +358,7 @@ export default function ProcessesPage(): React.ReactElement {
           transition={{ duration: 0.8 }}
           className="text-center mb-32"
         >
-          <div className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#1877F2] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase">
+          <div className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#39569C] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase">
              Mastering Metallurgy
           </div>
 
@@ -374,7 +374,7 @@ export default function ProcessesPage(): React.ReactElement {
         <div className="relative">
           {/* Center vertical timeline */}
           <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/5" />
-          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-gradient-to-b from-[#1877F2] via-[#1877F2]/50 to-transparent shadow-[0_0_15px_rgba(24,119,242,0.3)]" />
+          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-gradient-to-b from-[#39569C] via-[#39569C]/50 to-transparent shadow-[0_0_15px_rgba(57,86,156,0.3)]" />
 
           <div className="space-y-32">
             {ProcessesData.map((step, index) => {
@@ -413,11 +413,11 @@ export default function ProcessesPage(): React.ReactElement {
                       {/* Floating title bar */}
                       <div className="absolute top-6 left-6">
                         <div className="flex items-center gap-4 bg-black/60 border border-white/20 px-6 py-3 rounded-full backdrop-blur-xl">
-                          <div className="text-[#1877F2] text-2xl h-10 w-10 flex items-center justify-center bg-white/5 rounded-xl">
+                          <div className="text-[#39569C] text-2xl h-10 w-10 flex items-center justify-center bg-white/5 rounded-xl">
                             {step.icon}
                           </div>
                           <div>
-                            <span className="block text-[8px] font-black uppercase tracking-[0.3em] text-[#1877F2] opacity-60">Step {step.id}</span>
+                            <span className="block text-[8px] font-black uppercase tracking-[0.3em] text-[#39569C] opacity-60">Step {step.id}</span>
                             <span className="block text-sm font-black text-white uppercase italic tracking-tight">{step.title}</span>
                           </div>
                         </div>
@@ -431,9 +431,9 @@ export default function ProcessesPage(): React.ReactElement {
                       isEven ? "lg:ml-auto" : "lg:mr-auto"
                     }`}
                   >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#1877F2]/5  pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#39569C]/5  pointer-events-none" />
                     <div className="lg:hidden flex items-center gap-4 mb-8">
-                       <div className="text-[#1877F2] text-xl h-10 w-10 flex items-center justify-center bg-white/5 rounded-xl">
+                       <div className="text-[#39569C] text-xl h-10 w-10 flex items-center justify-center bg-white/5 rounded-xl">
                          {step.icon}
                        </div>
                        <h2 className="text-2xl font-black text-white uppercase italic tracking-tight">{step.title}</h2>
@@ -446,7 +446,7 @@ export default function ProcessesPage(): React.ReactElement {
                     <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between opacity-40">
                        <span className="text-[10px] font-black uppercase tracking-widest leading-none">Process Phase {step.id}</span>
                        <div className="h-px flex-1 mx-4 bg-white/5" />
-                       <div className="w-2 h-2 rounded-full bg-[#1877F2]" />
+                       <div className="w-2 h-2 rounded-full bg-[#39569C]" />
                     </div>
                   </motion.div>
                 </motion.article>

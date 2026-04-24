@@ -4,14 +4,14 @@
   /* Dark Shiny Black & Liquid UI Palette */
   --bg-deep-metal: #020202;
   --bg-plate: radial-gradient(circle at 50% 0%, #15181c 0%, #050608 60%, #000000 100%);
-  --accent-primary: #1877F2; /* Muted Slate Blue */
-  --accent-glow: rgba(24, 119, 242, 0.35);
+  --accent-primary: #39569C; /* Muted Slate Blue */
+  --accent-glow: rgba(57, 86, 156, 0.35);
   --text-primary: #f2f5f8;
   --text-muted: #9aa2ac;
   
   /* Glassmorphism - Liquid Polish */
   --glass-bg: rgba(255, 255, 255, 0.02);
-  --glass-border: rgba(24, 119, 242, 0.15);
+  --glass-border: rgba(57, 86, 156, 0.15);
   --glass-blur: blur(20px);
   
   /* Typography - Clean & Modern */
@@ -67,8 +67,8 @@ body {
 }
 
 .glass-card:hover {
-  border-color: rgba(24, 119, 242, 0.4);
-  box-shadow: 0 12px 40px rgba(24, 119, 242, 0.1);
+  border-color: rgba(57, 86, 156, 0.4);
+  box-shadow: 0 12px 40px rgba(57, 86, 156, 0.1);
 }
 
 .liquid-button {
@@ -102,7 +102,7 @@ body {
 }
 
 .metal-text {
-  background: linear-gradient(to bottom, #ffffff 0%, #1877F2 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #39569C 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

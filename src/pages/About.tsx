@@ -202,14 +202,14 @@ export default function About() {
 
                 <div className="p-10 text-center relative">
                   <h3 className="text-2xl font-bold mb-2 tracking-tight">{m.name}</h3>
-                  <p className="text-[#1877F2] font-medium text-sm mb-6 uppercase tracking-widest">{m.role}</p>
+                  <p className="text-[#39569C] font-medium text-sm mb-6 uppercase tracking-widest">{m.role}</p>
 
                   {m.linkedin && (
                     <a
                       href={m.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-white/50 hover:text-[#1877F2] transition-colors text-sm font-medium"
+                      className="inline-flex items-center text-white/50 hover:text-[#39569C] transition-colors text-sm font-medium"
                     >
                       <Linkedin className="w-5 h-5 mr-3" />
                       VIEW PROFILE
@@ -235,7 +235,7 @@ export default function About() {
             
             <motion.div
               style={{ height: lineHeight }}
-              className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 w-[1px] bg-gradient-to-b from-[#1877F2] via-[#1877F2]/50 to-transparent origin-top shadow-[0_0_15px_rgba(24,119,242,0.5)]"
+              className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 w-[1px] bg-gradient-to-b from-[#39569C] via-[#39569C]/50 to-transparent origin-top shadow-[0_0_15px_rgba(57,86,156,0.5)]"
             />
 
             <div className="space-y-24">
@@ -254,12 +254,12 @@ export default function About() {
                     <div className="hidden md:block w-1/2" />
 
                     {/* Dot */}
-                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full z-10 shadow-[0_0_20px_rgba(24,119,242,0.8)] border-4 border-black" />
+                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full z-10 shadow-[0_0_20px_rgba(57,86,156,0.8)] border-4 border-black" />
 
                     {/* Content */}
                     <div className={`w-full md:w-1/2 ${isEven ? 'md:pl-16' : 'md:pr-16'}`}>
                       <div className="glass-card p-8 rounded-[30px] border border-white/5 hover:border-sky-500/20 transition-colors shadow-2xl">
-                        <div className="inline-block px-3 py-1 rounded-full bg-[#1877F2]/10 text-[#1877F2] text-[10px] font-bold tracking-[0.2em] mb-4 uppercase">
+                        <div className="inline-block px-3 py-1 rounded-full bg-[#39569C]/10 text-[#39569C] text-[10px] font-bold tracking-[0.2em] mb-4 uppercase">
                           {m.year}
                         </div>
                         <h3 className="text-xl font-bold mb-2">{m.title}</h3>

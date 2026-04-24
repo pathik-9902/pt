@@ -38,7 +38,7 @@ export default function ServicesSection() {
            viewport={{ once: true }}
            className="text-center mb-24"
         >
-          <div className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#1877F2] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase">
+          <div className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#39569C] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase">
              Expert Engineering
           </div>
           <h2 className="text-4xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none mb-8">
@@ -58,12 +58,12 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="glass-card rounded-[48px] p-12 text-center group hover:border-[#1877F2]/30 transition-all duration-700 shadow-2xl relative overflow-hidden"
+              className="glass-card rounded-[48px] p-12 text-center group hover:border-[#39569C]/30 transition-all duration-700 shadow-2xl relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#1877F2]/5  pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#39569C]/5  pointer-events-none" />
               
-              <div className="w-20 h-20 rounded-3xl bg-[#1877F2]/10 flex items-center justify-center mx-auto mb-10 group-hover:bg-[#1877F2]/20 transition-all border border-[#1877F2]/10">
-                <service.icon size={36} className="text-[#1877F2]" />
+              <div className="w-20 h-20 rounded-3xl bg-[#39569C]/10 flex items-center justify-center mx-auto mb-10 group-hover:bg-[#39569C]/20 transition-all border border-[#39569C]/10">
+                <service.icon size={36} className="text-[#39569C]" />
               </div>
 
               <span className="block text-[10px] font-black metal-text/60 tracking-widest uppercase mb-2">Service Line {service.id}</span>
@@ -75,7 +75,7 @@ export default function ServicesSection() {
               </p>
 
               <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                 <div className="h-1 w-12 bg-[#1877F2] rounded-full" />
+                 <div className="h-1 w-12 bg-[#39569C] rounded-full" />
               </div>
             </motion.div>
           ))}

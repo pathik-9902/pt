@@ -142,7 +142,7 @@ export default function CertificatesPage(): JSX.Element {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#7FA1C3] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase"
+            className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#1877F2] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase"
           >
              Global Standards
           </motion.div>
@@ -169,7 +169,7 @@ export default function CertificatesPage(): JSX.Element {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 1.02, y: -10 }}
-                className="group relative rounded-[48px] overflow-hidden glass-card shadow-2xl cursor-pointer p-6 border-white/5 hover:border-[#7FA1C3]/30 transition-all duration-500"
+                className="group relative rounded-[48px] overflow-hidden glass-card shadow-2xl cursor-pointer p-6 border-white/5 hover:border-[#1877F2]/30 transition-all duration-500"
                 onClick={() => openCert(c)}
               >
                 <div className="relative aspect-[210/297] rounded-[32px] overflow-hidden bg-black mb-8 ring-1 ring-white/5 shadow-inner">
@@ -183,7 +183,7 @@ export default function CertificatesPage(): JSX.Element {
                     />
                   ) : (
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                      <div className="w-20 h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-[#7FA1C3] group-hover:bg-[#7FA1C3]/20 transition-all">
+                      <div className="w-20 h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-[#1877F2] group-hover:bg-[#1877F2]/20 transition-all">
                         <FileText className="w-10 h-10" />
                       </div>
                     </div>
@@ -192,7 +192,7 @@ export default function CertificatesPage(): JSX.Element {
                 </div>
 
                 <div className="px-4 text-center">
-                  <span className="block text-[10px] font-black text-[#7FA1C3]/60 tracking-widest uppercase mb-1">Certe-ID: PAD-{c.id}</span>
+                  <span className="block text-[10px] font-black text-[#1877F2]/60 tracking-widest uppercase mb-1">Certe-ID: PAD-{c.id}</span>
                   <h3 className="text-xl font-black text-white italic uppercase tracking-tighter leading-tight">{c.title}</h3>
                   {c.year && <div className="text-xs font-bold text-gray-500 mt-2 uppercase tracking-widest">Valid since {c.year}</div>}
                 </div>
@@ -216,7 +216,7 @@ export default function CertificatesPage(): JSX.Element {
             ref={modalRef}
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            className="relative rounded-[56px] overflow-hidden glass-card bg-black/60 shadow-[0_0_100px_rgba(255,255,255,0.1)] border-white/10 w-full max-w-5xl overflow-y-auto max-h-full"
+            className="relative rounded-[56px] overflow-hidden glass-card bg-black/60 shadow-[0_0_100px_rgba(24,119,242,0.1)] border-white/10 w-full max-w-5xl overflow-y-auto max-h-full"
           >
             {/* HEADER */}
             <div
@@ -225,7 +225,7 @@ export default function CertificatesPage(): JSX.Element {
             >
               <div>
                 <h3 className="text-2xl font-black text-white italic uppercase tracking-tighter mb-1">{activeTitle}</h3>
-                <p className="text-xs font-bold text-[#7FA1C3]/60 uppercase tracking-widest leading-none">
+                <p className="text-xs font-bold text-[#1877F2]/60 uppercase tracking-widest leading-none">
                   Verified Performance Standards
                 </p>
               </div>
@@ -236,7 +236,7 @@ export default function CertificatesPage(): JSX.Element {
                     href={activeOriginalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-14 h-14 rounded-full glass-card flex items-center justify-center text-white hover:bg-[#7FA1C3] hover:text-white transition-all shadow-xl"
+                    className="w-14 h-14 rounded-full glass-card flex items-center justify-center text-white hover:bg-[#1877F2] hover:text-white transition-all shadow-xl"
                   >
                     <Download size={20} />
                   </a>

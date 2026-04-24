@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Award, Users, Wrench } from "lucide-react";
 
 const reasons = [
-  { id: 1, icon: <Wrench className="w-6 h-6 text-[#7FA1C3]" />, text: "State-of-the-art in-house manufacturing" },
-  { id: 2, icon: <Award className="w-6 h-6 text-[#7FA1C3]" />, text: "ISO 9001:2015 certified quality systems" },
-  { id: 3, icon: <ShieldCheck className="w-6 h-6 text-[#7FA1C3]" />, text: "Metallurgically & dimensionally precise castings" },
-  { id: 4, icon: <Users className="w-6 h-6 text-[#7FA1C3]" />, text: "Experienced engineers and skilled workforce" },
+  { id: 1, icon: <Wrench className="w-6 h-6 text-[#1877F2]" />, text: "State-of-the-art in-house manufacturing" },
+  { id: 2, icon: <Award className="w-6 h-6 text-[#1877F2]" />, text: "ISO 9001:2015 certified quality systems" },
+  { id: 3, icon: <ShieldCheck className="w-6 h-6 text-[#1877F2]" />, text: "Metallurgically & dimensionally precise castings" },
+  { id: 4, icon: <Users className="w-6 h-6 text-[#1877F2]" />, text: "Experienced engineers and skilled workforce" },
 ];
 
 export default function WhyChooseUs() {
@@ -21,7 +21,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-xs font-black tracking-[0.2em] text-[#7FA1C3] uppercase backdrop-blur-xl mb-10">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-2 text-xs font-black tracking-[0.2em] text-[#1877F2] uppercase backdrop-blur-xl mb-10">
             Professional Partner
           </div>
 
@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
             Why <span className="metal-text">Choose</span> Us
           </h2>
 
-          <p className="text-xl text-gray-300 font-medium italic mb-12 opacity-90 leading-relaxed border-l-4 border-[#7FA1C3] pl-8">
+          <p className="text-xl text-gray-300 font-medium italic mb-12 opacity-90 leading-relaxed border-l-4 border-[#1877F2] pl-8">
             Excellence in precision investment casting through advanced engineering and metallurgical discipline.
           </p>
 
@@ -41,9 +41,9 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="glass-card flex items-center gap-5 p-6 rounded-[32px] hover:border-[#7FA1C3]/30 transition-all group shadow-xl"
+                className="glass-card flex items-center gap-5 p-6 rounded-[32px] hover:border-[#1877F2]/30 transition-all group shadow-xl"
               >
-                <div className="w-12 h-12 rounded-2xl bg-[#7FA1C3]/10 flex items-center justify-center group-hover:bg-[#7FA1C3]/20 transition-colors shadow-inner">
+                <div className="w-12 h-12 rounded-2xl bg-[#1877F2]/10 flex items-center justify-center group-hover:bg-[#1877F2]/20 transition-colors shadow-inner">
                   {reason.icon}
                 </div>
                 <span className="text-white font-bold text-sm leading-tight tracking-tight">{reason.text}</span>
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
 
         {/* Right Content - Visuals */}
         <div className="grid grid-cols-2 gap-6 relative">
-          <div className="absolute -inset-10 bg-[#7FA1C3]/5 rounded-full pointer-events-none" />
+          <div className="absolute -inset-10 bg-[#1877F2]/5 rounded-full pointer-events-none" />
           <motion.div
              initial={{ opacity: 0, y: 30 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
           className="glass-card p-12 md:p-20 rounded-[60px] shadow-2xl border-white/5 relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#7FA1C3]/5 rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#1877F2]/5 rounded-full pointer-events-none" />
           <div className="grid md:grid-cols-2 gap-16 relative z-10">
             <div className="space-y-8">
               <div className="space-y-4">

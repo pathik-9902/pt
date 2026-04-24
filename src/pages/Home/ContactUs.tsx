@@ -50,7 +50,7 @@ export default function ContactUs() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#7FA1C3] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase">
+          <div className="inline-flex gap-3 items-center text-[10px] font-black tracking-widest text-[#1877F2] bg-white/5 border border-white/10 px-6 py-2 rounded-full mb-8 uppercase">
              Get In Touch
           </div>
           <h2 className="text-4xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none mb-8">
@@ -72,7 +72,7 @@ export default function ContactUs() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#7FA1C3] to-transparent opacity-30" />
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#1877F2] to-transparent opacity-30" />
             
             <input type="hidden" name="_subject" value="New Inquiry from Padmaja Website" />
             <input type="hidden" name="_captcha" value="false" />
@@ -80,23 +80,23 @@ export default function ContactUs() {
             <div className="space-y-8">
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-[#7FA1C3] pl-6">Full Name</label>
-                    <input name="name" type="text" value={form.name} onChange={handleChange} placeholder="Enter name" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#7FA1C3] outline-none transition-all font-medium italic" />
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#1877F2] pl-6">Full Name</label>
+                    <input name="name" type="text" value={form.name} onChange={handleChange} placeholder="Enter name" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#1877F2] outline-none transition-all font-medium italic" />
                   </div>
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-[#7FA1C3] pl-6">Email Address</label>
-                    <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="email@address.com" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#7FA1C3] outline-none transition-all font-medium italic" />
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#1877F2] pl-6">Email Address</label>
+                    <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="email@address.com" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#1877F2] outline-none transition-all font-medium italic" />
                   </div>
                </div>
 
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-[#7FA1C3] pl-6">Phone</label>
-                    <input name="phone" type="text" value={form.phone} onChange={handleChange} placeholder="+91" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#7FA1C3] outline-none transition-all font-medium italic" />
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#1877F2] pl-6">Phone</label>
+                    <input name="phone" type="text" value={form.phone} onChange={handleChange} placeholder="+91" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#1877F2] outline-none transition-all font-medium italic" />
                   </div>
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-[#7FA1C3] pl-6">Location</label>
-                    <input name="address" type="text" value={form.address} onChange={handleChange} placeholder="City, Country" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#7FA1C3] outline-none transition-all font-medium italic" />
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#1877F2] pl-6">Location</label>
+                    <input name="address" type="text" value={form.address} onChange={handleChange} placeholder="City, Country" required className="w-full rounded-full px-8 py-5 bg-white/5 border border-white/10 text-white placeholder-white/20 focus:border-[#1877F2] outline-none transition-all font-medium italic" />
                   </div>
                </div>
 
@@ -104,7 +104,7 @@ export default function ContactUs() {
                 <motion.button
                   type="submit"
                   disabled={loading}
-                  className="w-full rounded-full py-6 font-black uppercase tracking-[0.3em] text-white bg-[#7FA1C3] hover:bg-[#7FA1C3]/80 shadow-2xl transition-all disabled:opacity-50"
+                  className="w-full rounded-full py-6 font-black uppercase tracking-[0.3em] text-white bg-[#1877F2] hover:bg-[#1877F2]/80 shadow-2xl transition-all disabled:opacity-50"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -150,12 +150,12 @@ export default function ContactUs() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="glass-card rounded-[40px] p-10 group hover:border-[#7FA1C3]/30 transition-all duration-500 shadow-xl"
+              className="glass-card rounded-[40px] p-10 group hover:border-[#1877F2]/30 transition-all duration-500 shadow-xl"
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#7FA1C3]/10 flex items-center justify-center mb-6 group-hover:bg-[#7FA1C3]/20 transition-all">
-                <item.icon className="w-6 h-6 text-[#7FA1C3]" />
+              <div className="w-14 h-14 rounded-2xl bg-[#1877F2]/10 flex items-center justify-center mb-6 group-hover:bg-[#1877F2]/20 transition-all">
+                <item.icon className="w-6 h-6 text-[#1877F2]" />
               </div>
-              <div className="text-[10px] font-black text-[#7FA1C3] uppercase tracking-widest mb-2 opacity-60 leading-none">{item.label}</div>
+              <div className="text-[10px] font-black text-[#1877F2] uppercase tracking-widest mb-2 opacity-60 leading-none">{item.label}</div>
               <p className="text-xl font-black text-white italic uppercase tracking-tight mb-2">{item.text}</p>
               <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">{item.sub}</p>
             </div>
